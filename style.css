@@ -366,7 +366,7 @@ form {
     margin-right: 45px;
     margin-top: 50px;
     font-family: 'Montserrat', sans-serif;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
 }
 
 .program {
@@ -660,8 +660,16 @@ form {
     .image-box{
         height: auto;
     }
+    .about-section {
+        padding-top: 120px;
+    }
+    .about-us {
+        padding-top: 120px;
+    }
+    .health-about{
+        padding-top: 120px;
+    }
     .image-container{
-        margin-top: 120px;
         margin-left: 10%;
         width: 85%;
         height: 50%;
