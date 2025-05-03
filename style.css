@@ -78,7 +78,7 @@ nav {
     margin: 20px;
     /* box-shadow: 0 0 15px rgba(238, 238, 238, 0.548); */
     overflow: hidden;
-    background: url(background-contact.png) no-repeat center center;
+    background: url(assets/background-contact.png) no-repeat center center;
     background-size: cover;
 }
 .form-box-login, .form-box-regist {
@@ -220,7 +220,7 @@ form {
 }
 
 .home {
-    background-image: url(background-home.png);
+    background-image: url(assets/background-home.png);
     background-size: cover;
     background-position: center;
     background-attachment: none;
@@ -454,49 +454,49 @@ form {
     height: 150px;
 }
 .item-program:nth-child(2){
-    background-image: url(workout-1.png);
+    background-image: url(assets/workout-1.png);
 }
 .item-program:nth-child(3){
-    background-image: url(schedule-1.png);
+    background-image: url(assets/schedule-1.png);
 }
 .item-program:nth-child(4){
-    background-image: url(nutritions-foods-1.png);
+    background-image: url(assets/nutritions-foods-1.png);
 }
 .item-program:nth-child(5){
-    background-image: url(workout-2.png);
+    background-image: url(assets/workout-2.png);
 }
 .item-program:nth-child(6){
-    background-image: url(schedule-2.png);
+    background-image: url(assets/schedule-2.png);
 }
 .item-program:nth-child(7){
-    background-image: url(nutritions-foods-2.png);
+    background-image: url(assets/nutritions-foods-2.png);
 }
 .item-program:nth-child(8){
-    background-image: url(workout-3.png);
+    background-image: url(assets/workout-3.png);
 }
 .item-program:nth-child(9){
-    background-image: url(schedule-3.png);
+    background-image: url(assets/schedule-3.png);
 }
 .item-program:nth-child(10){
-    background-image: url(nutritions-foods-3.png);
+    background-image: url(assets/nutritions-foods-3.png);
 }
 .item-program:nth-child(11){
-    background-image: url(workout-4.png);
+    background-image: url(assets/workout-4.png);
 }
 .item-program:nth-child(12){
-    background-image: url(schedule-4.png);
+    background-image: url(assets/schedule-4.png);
 }
 .item-program:nth-child(13){
-    background-image: url(nutritions-foods-4.png);
+    background-image: url(assets/nutritions-foods-4.png);
 }
 .item-program:nth-child(14){
-    background-image: url(workout-5.png);
+    background-image: url(assets/workout-5.png);
 }
 .item-program:nth-child(15){
-    background-image: url(schedule-5.png);
+    background-image: url(assets/schedule-5.png);
 }
 .item-program:nth-child(16){
-    background-image: url(nutritions-foods-5.png);
+    background-image: url(assets/nutritions-foods-5.png);
 }
 .item-program:hover{
     opacity: 50%;

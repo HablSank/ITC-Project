@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDE - Chest Workout</title>
+    <style>
+        :root {
+            --primary-color: #e62d2d;
+            --dark-bg: #1a1a1a;
+            --light-text: #ffffff;
+            --section-bg: #222222;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .sign-in {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        
+        .hero {
+            height: 50vh;
+            background-image: url('https://via.placeholder.com/1600x900');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+        
+        .workout-details {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .workout-details h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 2rem 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .exercise-card {
+            background-color: var(--section-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .exercise-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .exercise-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .exercise-content {
+            padding: 1.5rem;
+        }
+        
+        .exercise-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .exercise-details {
+            margin-top: 1rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            width: 120px;
+        }
+        
+        footer {
+            background-color: #111;
+            padding: 1rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .exercise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">HDE</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="signin.html" class="sign-in">Sign In</a>
+    </header>
+
+    <section class="hero" style="background-image: url('https://via.placeholder.com/1600x900');">
+        <div class="hero-content">
+            <h1>Chest Workout</h1>
+            <p>Build a powerful chest with our carefully designed exercises that target all parts of your pectoral muscles.</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <h2 class="section-title">Chest Workout Program</h2>
+        
+        <div class="workout-details">
+            <h3>Overview</h3>
+            <p>Our chest workout program is designed to help you build strength, size, and definition in your pectoral muscles. This comprehensive routine targets the upper, middle, and lower portions of your chest through a variety of exercises using different angles and equipment.</p>
+            
+            <p>For optimal results, perform this chest workout 1-2 times per week with at least 48 hours of recovery between sessions. Always warm up properly before beginning your workout and focus on proper form rather than lifting heavy weights with poor technique.</p>
+        </div>
+        
+        
+        <h3>Exercises</h3>
+        <div class="exercise-grid">
+            <div class="exercise-card">
+                <div class="exercise-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                <div class="exercise-content">
+                    <h3>Barbell Bench Press</h3>
+                    <p>The king of chest exercises, targeting the entire pectoral region with an emphasis on the middle chest.</p>
+                    <div class="exercise-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Sets:</span>
+                            <span>4</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Reps:</span>
+                            <span>8-12</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rest:</span>
+                            <span>90 seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                <div class="exercise-content">
+                    <h3>Incline Dumbbell Press</h3>
+                    <p>Targets the upper chest and helps develop a full, well-rounded chest appearance.</p>
+                    <div class="exercise-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Sets:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Reps:</span>
+                            <span>10-12</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rest:</span>
+                            <span>60-90 seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                <div class="exercise-content">
+                    <h3>Chest Dips</h3>
+                    <p>An excellent compound movement that focuses on the lower chest while also engaging the triceps.</p>
+                    <div class="exercise-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Sets:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Reps:</span>
+                            <span>10-15</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rest:</span>
+                            <span>60 seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                <div class="exercise-content">
+                    <h3>Cable Flyes</h3>
+                    <p>Isolates the chest muscles and provides constant tension throughout the movement for maximum muscle activation.</p>
+                    <div class="exercise-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Sets:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Reps:</span>
+                            <span>12-15</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rest:</span>
+                            <span>60 seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-card">
+                <div class="exercise-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                <div class="exercise-content">
+                    <h3>Push-Ups</h3>
+                    <p>A versatile bodyweight exercise that can be modified in numerous ways to target different parts of the chest.</p>
+                    <div class="exercise-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Sets:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Reps:</span>
+                            <span>15-20</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Rest:</span>
+                            <span>60 seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="workout-details" style="margin-top: 3rem;">
+            <h3>Tips for a Successful Chest Workout</h3>
+            <ul>
+                <li>Always warm up properly with 5-10 minutes of cardio and dynamic stretches.</li>
+                <li>Focus on the mind-muscle connection—feel your chest muscles working during each exercise.</li>
+                <li>Control the weight through the entire range of motion—avoid bouncing the bar off your chest.</li>
+                <li>Incorporate a variety of angles (flat, incline, decline) to fully develop all areas of the chest.</li>
+                <li>Progress gradually by increasing weight, reps, or sets over time.</li>
+                <li>Allow for adequate recovery—muscles grow during rest, not during workouts.</li>
+            </ul>
+        </div>
+        
+    </main>
+
+    <footer>
+            <p class="copyright">© 2025 HDE Fitness. All rights reserved.</p>
+    </footer>
+</body>
+</html>
